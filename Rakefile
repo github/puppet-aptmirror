@@ -15,6 +15,14 @@ task :lint do
   fail if linter.errors?
 end
 
+task :bootstrap do
+  Dir.chdir('spec/fixtures') do
+    `bundle exec librarian-puppet install`
+  end
+end
+
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.pattern = 'spec/*/*_spec.rb'
 end
+
+task :test => [:bootstrap, :spec, :lint]

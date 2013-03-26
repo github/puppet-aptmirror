@@ -2,3 +2,7 @@
 /.vagrant/
 /Vagrantfile
 /vendor/gems/
+/spec/fixtures/.librarian/
+/spec/fixtures/.tmp/
+/spec/fixtures/modules/stdlib/
+/spec/fixtures/vendor/

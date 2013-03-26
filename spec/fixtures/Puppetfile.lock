@@ -1,0 +1,8 @@
+GITHUBTARBALL
+  remote: puppetlabs/puppetlabs-stdlib
+  specs:
+    puppetlabs/stdlib (3.2.0)
+
+DEPENDENCIES
+  puppetlabs/stdlib (= 3.2.0)
+

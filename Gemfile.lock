@@ -5,7 +5,11 @@ GEM
     facter (1.6.18)
     hiera (1.1.2)
       json_pure
+    json (1.7.7)
     json_pure (1.7.7)
+    librarian-puppet (0.9.8)
+      json
+      thor (~> 0.15)
     metaclass (0.0.1)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
@@ -29,11 +33,13 @@ GEM
     rspec-mocks (2.13.0)
     rspec-puppet (0.1.6)
       rspec
+    thor (0.18.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  librarian-puppet
   puppet
   puppet-lint
   puppetlabs_spec_helper
