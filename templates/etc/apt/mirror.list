@@ -27,7 +27,7 @@ deb-amd64 <%= source.title %> <%= dist %> <%= source[:components].join(' ') %>
 
 <% @sources.select { |r| r[:i386].to_s == 'true' }.each do |source| -%>
 <% source[:distributions].each do |dist| -%>
-deb-amd64 <%= source.title %> <%= dist %> <%= source[:components].join(' ') %>
+deb-i386 <%= source.title %> <%= dist %> <%= source[:components].join(' ') %>
 <% end -%>
 <% end -%>
 
