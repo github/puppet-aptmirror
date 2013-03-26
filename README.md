@@ -26,16 +26,29 @@ aptmirror::source { 'http://us.archive.ubuntu.com':
 
 ## Classes
 ### aptmirror
- * **base_path         -** 
- * **mirror_path       -**
- * **skel_path         -**
- * **var_path          -**
- * **cleanscript       -**
- * **postmirror_script -**
- * **defaultarch       -**
- * **run_postmirror    -**
- * **nthreads          -**
- * **_tilde            -**
+ * **base_path         -** The base path on disk where apt-mirror will store
+                           its data. Defaults to `/var/spool/apt-mirror`.
+ * **mirror_path       -** The path on disk where the packages will be stored.
+                           Defaults to `$base_path/mirror`.
+ * **skel_path         -** The path on disk where the downloaded indexes will
+                           be temporarily stored. Defaults to
+                           `$base_path/skel`.
+ * **var_path          -** The path on disk where the log files and MD5 sums
+                           will be stored. Defaults to `$base_path/var`.
+ * **cleanscript       -** The path to the mirror cleaning script. Defaults to
+                           `$var_path/clean.sh`.
+ * **postmirror_script -** The path to the script that will run after the
+                           mirror process has finished. Defaults to
+                           `$var_path/postmirror.sh`.
+ * **defaultarch       -** The architecture to pull down if you don't specify
+                           an architecture in your `aptmirror::sources`.
+                           Defaults to `amd64`.
+ * **run_postmirror    -** Set to `1` to run the postmirror script after the
+                           mirror has finished syncing. Defaults to `0`.
+ * **nthreads          -** The number of threads apt-mirror should run.
+                           Defaults to `20`.
+ * **_tilde            -** Set to `1` to skip packages that contain a tilde
+                           (`~`). Defaults to `0`.
 
 ## Defined Types
 ### aptmirror::source
