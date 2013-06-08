@@ -11,7 +11,7 @@ set nthreads          <%= @nthreads %>
 set _tilde            <%= @_tilde %>
 ############# end config ##############
 <% @sources = scope.catalog.resources.select { |r| r.type == 'Aptmirror::Source' } -%>
-<% @sources.each { |r| r.set_default_parameters(scope) } -%>
+<% @sources.each { |r| r.respond_to?(:add_defaults, true) ? r.send(:add_defaults) : r.set_default_parameters(scope) } -%>
 
 <% @sources.select { |r| r[:source].to_s == 'true' }.each do |source| -%>
 <% source[:distributions].each do |dist| -%>
