@@ -16,6 +16,7 @@ class aptmirror(
 
   file { '/etc/apt/mirror.list':
     content => template('aptmirror/etc/apt/mirror.list'),
+    mode    => '444'
   }
 
   Aptmirror::Source<| |> -> File['/etc/apt/mirror.list']
