@@ -15,22 +15,22 @@ set _tilde            <%= @_tilde %>
 
 <% @sources.select { |r| r[:source].to_s == 'true' }.each do |source| -%>
 <% source[:distributions].each do |dist| -%>
-deb-src <%= source.title %> <%= dist %> <%= source[:components].join(' ') %>
+deb-src <%= source[:url] %> <%= dist %> <%= source[:components].join(' ') %>
 <% end -%>
 <% end -%>
 
 <% @sources.select { |r| r[:amd64].to_s == 'true' }.each do |source| -%>
 <% source[:distributions].each do |dist| -%>
-deb-amd64 <%= source.title %> <%= dist %> <%= source[:components].join(' ') %>
+deb-amd64 <%= source[:url] %> <%= dist %> <%= source[:components].join(' ') %>
 <% end -%>
 <% end -%>
 
 <% @sources.select { |r| r[:i386].to_s == 'true' }.each do |source| -%>
 <% source[:distributions].each do |dist| -%>
-deb-i386 <%= source.title %> <%= dist %> <%= source[:components].join(' ') %>
+deb-i386 <%= source[:url] %> <%= dist %> <%= source[:components].join(' ') %>
 <% end -%>
 <% end -%>
 
 <% @sources.select { |r| r[:clean].to_s == 'true' }.each do |source| -%>
-clean <%= source.title %>
+clean <%= source[:url] %>
 <% end -%>
