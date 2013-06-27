@@ -38,7 +38,8 @@ describe 'aptmirror' do
 
   context 'with an aptmirror::source' do
     let(:pre_condition) { <<-EOF
-      aptmirror::source { 'http://us.archive.ubuntu.com':
+      aptmirror::source { 'http://us.archive.ubuntu.com foo':
+        url           => 'http://us.archive.ubuntu.com',
         distributions => ['precise', 'precise-security'],
         components    => ['main', 'restricted'],
         clean         => true,
