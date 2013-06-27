@@ -1,6 +1,7 @@
 define aptmirror::source(
     $distributions,
     $components,
+    $url    = $name,
     $clean  = false,
     $amd64  = true,
     $i386   = false,
@@ -12,4 +13,5 @@ define aptmirror::source(
   validate_bool($amd64)
   validate_bool($i386)
   validate_bool($source)
+  validate_string($url)
 }
