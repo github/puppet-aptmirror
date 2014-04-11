@@ -14,4 +14,10 @@ define aptmirror::source(
   validate_bool($i386)
   validate_bool($source)
   validate_string($url)
+
+  concat::fragment { "aptmirror_list_source_${title}":
+    target  => $::aptmirror::mirrorlist,
+    content => template('aptmirror/etc/apt/mirror.list.source'),
+    order   => '10',
+  }
 }
