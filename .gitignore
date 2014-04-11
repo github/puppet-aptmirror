@@ -6,3 +6,5 @@
 /spec/fixtures/.tmp/
 /spec/fixtures/modules/stdlib/
 /spec/fixtures/vendor/
+.tmp/
+modules/
