@@ -1,0 +1,15 @@
+<% @distributions.each do |dist| -%>
+  <%- if @i386 -%>
+    <%- %>deb-i386 <%= @url %> <%= dist %> <%= @components.join(' ') %>
+  <%- end -%>
+  <%- if @amd64 -%>
+    <%- %>deb-amd64 <%= @url %> <%= dist %> <%= @components.join(' ') %>
+  <%- end -%>
+  <%- if @source -%>
+    <%- %>deb-src <%= @url %> <%= dist %> <%= @components.join(' ') %>
+  <%- end -%>
+  <%- if @clean -%>
+    <%- %>clean <%= @url %>
+  <%- end -%>
+
+<% end %>

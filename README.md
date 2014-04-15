@@ -63,13 +63,3 @@ aptmirror::source { 'http://us.archive.ubuntu.com':
                        Defaults to `false`.
  * **source        -** Set to `true` to enable mirroring of the dpkg source
                        files. Defaults to `false`.
-
-## Here Be Dragons
-This module works through some interesting catalogue hackery. The
-`aptmirror::source` defined type doesn't actually do anything, it just acts as
-way to store data about the sources in your Puppet catalogue. In the
-`/etc/apt/mirror.list` template, we inspect the catalogue, pull out all the
-`aptmirror::source` instances and use their values to populate the template.
-This is done so that you can specify `aptmirror::source` dynamically anywhere
-in your manifests without having to go back and modify a static list of sources
-in the `aptmirror` class definition.

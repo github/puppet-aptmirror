@@ -10,14 +10,18 @@ class aptmirror(
     $nthreads          = '20',
     $_tilde            = '0',
   ) {
+  $mirrorlist = '/etc/apt/mirror.list'
+
   package { 'apt-mirror':
     ensure => installed,
   }
 
-  file { '/etc/apt/mirror.list':
-    content => template('aptmirror/etc/apt/mirror.list'),
-    mode    => '444'
+  concat { $mirrorlist:
   }
 
-  Aptmirror::Source<| |> -> File['/etc/apt/mirror.list']
+  concat::fragment { 'aptmirror_list_header':
+    target  => $mirrorlist,
+    content => template('aptmirror/etc/apt/mirror.list.header'),
+    order   => '01',
+  }
 }
