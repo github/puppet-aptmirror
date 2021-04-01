@@ -5,7 +5,7 @@ GEM
     facter (1.6.18)
     hiera (1.1.2)
       json_pure
-    json (1.7.7)
+    json (2.5.1)
     json_pure (1.7.7)
     librarian-puppet (0.9.8)
       json
